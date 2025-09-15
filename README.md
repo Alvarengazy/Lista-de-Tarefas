@@ -5,8 +5,8 @@
 Aplicação moderna, responsiva e acessível — rápida, leve e totalmente em **HTML + CSS + JavaScript (Vanilla)**.
 
 <p>
-  <img src="https://img.shields.io/badge/status-ativo-success?style=flat-square" alt="Status" />
-  <img src="https://img.shields.io/badge/licenca-livre-blue?style=flat-square" alt="Licença" />
+  <img src="https://img.shields.io/badge/status-Ativo-success?style=flat-square" alt="Status" />
+  <img src="https://img.shields.io/badge/licença-ALVARENGAZY-blue?style=flat-square" alt="Licença" />
   <img src="https://img.shields.io/badge/tema-light%20|%20dark-444?style=flat-square" alt="Tema" />
   <img src="https://img.shields.io/badge/drag--and--drop-on-orange?style=flat-square" alt="Arrastar e Soltar" />
   <img src="https://img.shields.io/badge/busca-instantanea-purple?style=flat-square" alt="Busca" />
@@ -193,6 +193,7 @@ Sugestões e issues são bem-vindas.
 **Alvarengazy**
 
 ---
+
 
 
 
