@@ -158,17 +158,6 @@ To-doList/
 | Cancelar edição | Esc no campo de edição |
 | Concluir | Espaço no checkbox (padrão navegador) |
 
----
-
-## 🚀 Servir Localmente (Opcional)
-```bash
-# Python 3
-python -m http.server 8080
-
-# Node (npx)
-npx serve .
-```
-Depois abra: http://localhost:8080
 
 ---
 
@@ -201,4 +190,5 @@ Sugestões e issues são bem-vindas.
 **Alvarengazy**
 
 ---
+
 
