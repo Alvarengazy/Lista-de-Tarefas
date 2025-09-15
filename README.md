@@ -15,6 +15,9 @@ Aplicação moderna, responsiva e acessível — rápida, leve e totalmente em *
   <img src="https://img.shields.io/badge/export/import-JSON-lightgrey?style=flat-square" alt="Export Import" />
 </p>
 <img width="1367" height="1299" alt="Image" src="https://github.com/user-attachments/assets/caf28961-389b-4b53-b6f3-f521626b580b" />
+
+LINK DO SITE: https://alvarengazy.github.io/Lista-de-Tarefas/
+
 <sub>Foco em simplicidade, fluidez e produtividade diária.</sub>
 
 </div>
@@ -190,6 +193,7 @@ Sugestões e issues são bem-vindas.
 **Alvarengazy**
 
 ---
+
 
 
 
