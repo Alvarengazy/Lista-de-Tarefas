@@ -1,0 +1,166 @@
+:root {
+  --transition-base: 180ms ease;
+  --color-accent: #0d6efd;
+  --color-accent-rgb: 13,110,253;
+  --color-bg: #ffffff;
+  --color-bg-alt: #f8f9fa;
+  --color-border: #dee2e6;
+  --color-text: #212529;
+  --color-text-soft: #6c757d;
+  --color-danger: #dc3545;
+  --radius-sm: .35rem;
+  --shadow-sm: 0 .125rem .25rem rgba(0,0,0,.08);
+  --shadow-focus: 0 0 0 .25rem rgba(var(--color-accent-rgb), .35);
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+[data-theme="dark"] {
+  --color-bg: #181c20;
+  --color-bg-alt: #20262b;
+  --color-border: #2c343a;
+  --color-text: #f1f3f5;
+  --color-text-soft: #adb5bd;
+  --shadow-sm: 0 .125rem .25rem rgba(0,0,0,.6);
+}
+
+/* Ajustes adicionais para melhorar contraste em dark mode */
+[data-theme="dark"] #taskForm.card { background: #222a30; border-color: #2c343a; }
+[data-theme="dark"] #taskForm input { background: #2a3238; border-color: #384148; }
+[data-theme="dark"] #taskForm input:focus { background: #2f383f; }
+[data-theme="dark"] #taskForm button.btn-primary { box-shadow: 0 0 0 0 rgba(0,0,0,0); }
+[data-theme="dark"] #taskForm button.btn-primary:focus { box-shadow: var(--shadow-focus); }
+[data-theme="dark"] #taskForm input::placeholder { color: #ffffff; opacity: .85; }
+[data-theme="dark"] #taskForm input::-ms-input-placeholder { color: #ffffff; }
+
+html, body { background: var(--color-bg); color: var(--color-text); }
+
+.bg-body { background: var(--color-bg) !important; }
+.bg-body-tertiary { background: var(--color-bg-alt) !important; }
+
+.border-bottom, .border-top, .list-group-item { border-color: var(--color-border) !important; }
+
+a, .btn-link { text-decoration: none; }
+
+#taskForm.focused, #taskForm:focus-within { box-shadow: var(--shadow-focus); transition: box-shadow var(--transition-base); }
+
+#taskForm input { background: var(--color-bg-alt); border-color: var(--color-border); }
+[data-theme="dark"] #taskForm input { color: var(--color-text); }
+
+.list-group-item { background: var(--color-bg); transition: background var(--transition-base), color var(--transition-base); }
+.list-group-item.dragging { opacity: .5; }
+
+.task-item { display: flex; align-items: center; gap: .75rem; padding: .75rem .85rem; }
+.task-content { flex-grow: 1; display: flex; flex-direction: column; gap: .25rem; }
+.task-title { font-weight: 500; word-break: break-word; }
+.task-title.completed { text-decoration: line-through; opacity: .6; }
+.task-meta { font-size: .65rem; letter-spacing: .5px; text-transform: uppercase; color: var(--color-text-soft); }
+
+.btn-icon { background: transparent; border: none; padding: .25rem .4rem; color: var(--color-text-soft); border-radius: var(--radius-sm); }
+.btn-icon:hover, .btn-icon:focus { color: var(--color-text); background: var(--color-bg-alt); }
+.btn-icon:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+
+.editing .task-title { display: none; }
+.editing .edit-field { display: block; }
+.edit-field { display: none; width: 100%; }
+
+.fade-in { animation: fadeIn .35s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+
+.slide-out { animation: slideOut .3s forwards ease; }
+@keyframes slideOut { to { opacity: 0; transform: translateX(12px); height: 0; margin: 0; padding: 0; } }
+
+#toggleTheme .bi { pointer-events: none; }
+
+.btn-outline-secondary.active { background: var(--color-accent); color: #fff; }
+
+#statusBar { min-height: 1.2rem; }
+
+/* Scrollbar refinado (webkit) */
+* { scrollbar-width: thin; scrollbar-color: var(--color-accent) var(--color-bg-alt); }
+*::-webkit-scrollbar { width: 10px; }
+*::-webkit-scrollbar-track { background: var(--color-bg-alt); }
+*::-webkit-scrollbar-thumb { background: rgba(var(--color-accent-rgb), .6); border-radius: 20px; border: 2px solid var(--color-bg-alt); }
+*::-webkit-scrollbar-thumb:hover { background: rgba(var(--color-accent-rgb), .85); }
+
+/* Dark mode transitions */
+body, .card, .list-group-item { transition: background var(--transition-base), color var(--transition-base), border-color var(--transition-base); }
+
+/* === Tags, Busca & Foco ================================================== */
+#searchInput { padding-right: 2.2rem; }
+#clearSearch { line-height: 1; }
+
+.tag-chip { display:inline-flex; align-items:center; gap:.35rem; background: var(--color-bg-alt); border:1px solid var(--color-border); padding:.25rem .55rem; border-radius: 999px; font-size:.65rem; font-weight:500; text-transform:uppercase; letter-spacing:.5px; cursor:pointer; transition: background .2s, color .2s, border-color .2s; }
+.tag-chip:hover { background: var(--color-accent); color:#fff; border-color: var(--color-accent); }
+.tag-chip.active { background: var(--color-accent); color:#fff; }
+.tag-chip button { background:transparent; border:0; padding:0; font-size:.75rem; color:inherit; cursor:pointer; }
+
+[data-theme="dark"] .tag-chip { background:#2a3238; border-color:#384148; }
+[data-theme="dark"] .tag-chip:hover { background: var(--color-accent); }
+
+#activeFilters { min-height: 1.2rem; }
+
+#focusPanel { border-left:4px solid var(--color-accent); }
+#focusPanel #focusTaskText { font-weight:500; }
+#pomodoroTimer { font-variant-numeric: tabular-nums; font-weight:600; }
+
+.task-tags { display:flex; flex-wrap:wrap; gap:4px; margin-top:4px; }
+.task-tag { background: rgba(var(--color-accent-rgb), .08); color: var(--color-accent); padding:2px 6px; font-size:.55rem; border-radius: 4px; letter-spacing:.5px; text-transform:uppercase; font-weight:600; }
+[data-theme="dark"] .task-tag { background: rgba(var(--color-accent-rgb), .15); }
+
+.focus-hidden { display:none !important; }
+
+/* === Animações utilitárias =============================================== */
+.anim-scale-in { animation: scaleIn .35s cubic-bezier(.4,.6,.2,1); }
+@keyframes scaleIn { 0% { opacity:0; transform: scale(.92) translateY(6px); } 60% { opacity:1; transform: scale(1.02) translateY(0); } 100% { transform: scale(1); } }
+
+.anim-pulse-complete { animation: pulseComplete 600ms ease; }
+@keyframes pulseComplete { 0% { box-shadow: 0 0 0 0 rgba(var(--color-accent-rgb), .55); } 70% { box-shadow: 0 0 0 10px rgba(var(--color-accent-rgb), 0); } 100% { box-shadow: 0 0 0 0 rgba(var(--color-accent-rgb), 0); } }
+
+.anim-edit-highlight { animation: editHighlight 1s ease; }
+@keyframes editHighlight { 0% { background: rgba(var(--color-accent-rgb), .15); } 100% { background: transparent; } }
+
+.anim-filter-fade { animation: filterFade .25s ease; }
+@keyframes filterFade { from { opacity:0; transform: translateY(4px); } to { opacity:1; transform: translateY(0); } }
+
+.anim-swap-out-in { position: relative; animation: swapOutIn .45s ease; }
+@keyframes swapOutIn { 0% { opacity:.3; transform: translateY(6px); } 50% { opacity:.6; } 100% { opacity:1; transform: translateY(0); } }
+
+/* Destaque de item recém adicionado (dark) */
+[data-theme="dark"] .list-group-item.task-recent .task-title { color: #ffffff !important; text-shadow: 0 0 4px rgba(255,255,255,.3); }
+@keyframes recentFlash { 0% { background: rgba(255,255,255,.08); } 100% { background: transparent; } }
+[data-theme="dark"] .list-group-item.task-recent { animation: recentFlash 1s ease; }
+
+/* Classe aplicada diretamente no título recém criado */
+[data-theme="dark"] .task-title-nova { color:#ffffff !important; font-weight:600; text-shadow:0 0 6px rgba(255,255,255,.35); }
+
+/* Reduz motion preferencialmente */
+@media (prefers-reduced-motion: reduce) {
+  .anim-scale-in, .anim-pulse-complete, .anim-edit-highlight, .anim-filter-fade, .anim-swap-out-in, .fade-in { animation: none !important; }
+  .slide-out { animation-duration: .01s; }
+}
+
+/* === Responsividade ====================================================== */
+@media (max-width: 768px) {
+  header .btn-group[role="group"] .btn { padding: .45rem .6rem; font-size: .75rem; }
+  #taskForm .card-body { flex-direction: column; }
+  #taskForm button[type=submit] { width: 100%; }
+  #searchInput { font-size: .9rem; }
+  .task-item { flex-wrap: wrap; padding: .65rem .7rem; }
+  .task-content { width: 100%; }
+  .btn-group.btn-group-sm .btn-icon { padding: .35rem .5rem; }
+  #focusPanel { margin-top: .75rem; }
+}
+
+@media (max-width: 500px) {
+  h1.h3 { font-size: 1.15rem; }
+  header .btn-group[role="group"] { flex-wrap: wrap; }
+  #activeFilters { gap: .35rem; }
+  .tag-chip { font-size: .55rem; padding:.2rem .5rem; }
+  .task-meta { font-size: .6rem; }
+  #pomodoroTimer { font-size: 2.2rem; }
+  footer { font-size: .7rem; }
+}
+
+@media (min-width: 1400px) {
+  main.container { max-width: 900px; }
+}
